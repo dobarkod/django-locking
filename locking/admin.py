@@ -71,6 +71,8 @@ class LockableAdmin(admin.ModelAdmin):
                                     app=content_type.app_label,
                                     model=content_type.model)
             class_name = 'locked'
+            if lock.locked_by is None:
+                return ''
             locked_by = lock.locked_by.username
             output = str(obj.id)
         except Lock.DoesNotExist:
