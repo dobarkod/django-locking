@@ -83,5 +83,5 @@ def js_variables(request):
         'admin_url': "/".join(_s.ADMIN_URL.split('/')[:-1]),
     })
 
-    return HttpResponse(response, mimetype='application/json')
+    return HttpResponse(response, content_type='application/json')
 
